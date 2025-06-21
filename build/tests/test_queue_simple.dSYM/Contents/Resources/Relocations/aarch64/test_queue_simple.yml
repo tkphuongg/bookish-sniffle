@@ -1,0 +1,62 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     'build/tests/test_queue_simple'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002648, symSize: 0x5FC }
+  - { offset: 0x42, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002648, symSize: 0x5FC }
+  - { offset: 0x10A, size: 0x8, addend: 0x0, symName: _set_color, symObjAddr: 0x0, symBinAddr: 0x100002C44, symSize: 0x88 }
+  - { offset: 0x131, size: 0x8, addend: 0x0, symName: _use_colored_output, symObjAddr: 0x54C, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offset: 0x141, size: 0x8, addend: 0x0, symName: _set_color, symObjAddr: 0x0, symBinAddr: 0x100002C44, symSize: 0x88 }
+  - { offset: 0x165, size: 0x8, addend: 0x0, symName: _reset_color, symObjAddr: 0x88, symBinAddr: 0x100002CCC, symSize: 0x38 }
+  - { offset: 0x1A7, size: 0x8, addend: 0x0, symName: _HRRN_tick, symObjAddr: 0x0, symBinAddr: 0x100002D04, symSize: 0x14 }
+  - { offset: 0x1B4, size: 0x8, addend: 0x0, symName: _HRRN_tick, symObjAddr: 0x0, symBinAddr: 0x100002D04, symSize: 0x14 }
+  - { offset: 0x1DC, size: 0x8, addend: 0x0, symName: _HRRN_startup, symObjAddr: 0x14, symBinAddr: 0x100002D18, symSize: 0x8 }
+  - { offset: 0x1F5, size: 0x8, addend: 0x0, symName: _HRRN_new_arrival, symObjAddr: 0x1C, symBinAddr: 0x100002D20, symSize: 0x18 }
+  - { offset: 0x22B, size: 0x8, addend: 0x0, symName: _HRRN_finish, symObjAddr: 0x34, symBinAddr: 0x100002D38, symSize: 0x4 }
+  - { offset: 0x2C4, size: 0x8, addend: 0x0, symName: _LCFSPR_tick, symObjAddr: 0x0, symBinAddr: 0x100002D3C, symSize: 0x14 }
+  - { offset: 0x2D1, size: 0x8, addend: 0x0, symName: _LCFSPR_tick, symObjAddr: 0x0, symBinAddr: 0x100002D3C, symSize: 0x14 }
+  - { offset: 0x2F9, size: 0x8, addend: 0x0, symName: _LCFSPR_startup, symObjAddr: 0x14, symBinAddr: 0x100002D50, symSize: 0x8 }
+  - { offset: 0x312, size: 0x8, addend: 0x0, symName: _LCFSPR_new_arrival, symObjAddr: 0x1C, symBinAddr: 0x100002D58, symSize: 0x18 }
+  - { offset: 0x348, size: 0x8, addend: 0x0, symName: _LCFSPR_finish, symObjAddr: 0x34, symBinAddr: 0x100002D70, symSize: 0x4 }
+  - { offset: 0x3E1, size: 0x8, addend: 0x0, symName: _MLF_tick, symObjAddr: 0x0, symBinAddr: 0x100002D74, symSize: 0x14 }
+  - { offset: 0x3EE, size: 0x8, addend: 0x0, symName: _MLF_tick, symObjAddr: 0x0, symBinAddr: 0x100002D74, symSize: 0x14 }
+  - { offset: 0x416, size: 0x8, addend: 0x0, symName: _MLF_startup, symObjAddr: 0x14, symBinAddr: 0x100002D88, symSize: 0x8 }
+  - { offset: 0x42F, size: 0x8, addend: 0x0, symName: _MLF_new_arrival, symObjAddr: 0x1C, symBinAddr: 0x100002D90, symSize: 0x18 }
+  - { offset: 0x465, size: 0x8, addend: 0x0, symName: _MLF_finish, symObjAddr: 0x34, symBinAddr: 0x100002DA8, symSize: 0x4 }
+  - { offset: 0x4FE, size: 0x8, addend: 0x0, symName: _PRIONP_tick, symObjAddr: 0x0, symBinAddr: 0x100002DAC, symSize: 0x14 }
+  - { offset: 0x50B, size: 0x8, addend: 0x0, symName: _PRIONP_tick, symObjAddr: 0x0, symBinAddr: 0x100002DAC, symSize: 0x14 }
+  - { offset: 0x533, size: 0x8, addend: 0x0, symName: _PRIONP_startup, symObjAddr: 0x14, symBinAddr: 0x100002DC0, symSize: 0x8 }
+  - { offset: 0x54C, size: 0x8, addend: 0x0, symName: _PRIONP_new_arrival, symObjAddr: 0x1C, symBinAddr: 0x100002DC8, symSize: 0x18 }
+  - { offset: 0x582, size: 0x8, addend: 0x0, symName: _PRIONP_finish, symObjAddr: 0x34, symBinAddr: 0x100002DE0, symSize: 0x4 }
+  - { offset: 0x61B, size: 0x8, addend: 0x0, symName: _queue_add, symObjAddr: 0x0, symBinAddr: 0x100002DE4, symSize: 0x80 }
+  - { offset: 0x629, size: 0x8, addend: 0x0, symName: _queue_add, symObjAddr: 0x0, symBinAddr: 0x100002DE4, symSize: 0x80 }
+  - { offset: 0x66D, size: 0x8, addend: 0x0, symName: _queue_poll, symObjAddr: 0x80, symBinAddr: 0x100002E64, symSize: 0x68 }
+  - { offset: 0x6A3, size: 0x8, addend: 0x0, symName: _new_queue, symObjAddr: 0xE8, symBinAddr: 0x100002ECC, symSize: 0x8 }
+  - { offset: 0x6BC, size: 0x8, addend: 0x0, symName: _free_queue, symObjAddr: 0xF0, symBinAddr: 0x100002ED4, symSize: 0x10 }
+  - { offset: 0x6E0, size: 0x8, addend: 0x0, symName: _queue_peek, symObjAddr: 0x100, symBinAddr: 0x100002EE4, symSize: 0x14 }
+  - { offset: 0x708, size: 0x8, addend: 0x0, symName: _queue_poll_tail, symObjAddr: 0x114, symBinAddr: 0x100002EF8, symSize: 0x14 }
+  - { offset: 0x793, size: 0x8, addend: 0x0, symName: _RR_tick, symObjAddr: 0x0, symBinAddr: 0x100002F0C, symSize: 0x14 }
+  - { offset: 0x7A0, size: 0x8, addend: 0x0, symName: _RR_tick, symObjAddr: 0x0, symBinAddr: 0x100002F0C, symSize: 0x14 }
+  - { offset: 0x7C8, size: 0x8, addend: 0x0, symName: _RR_startup, symObjAddr: 0x14, symBinAddr: 0x100002F20, symSize: 0x14 }
+  - { offset: 0x7F0, size: 0x8, addend: 0x0, symName: _RR_new_arrival, symObjAddr: 0x28, symBinAddr: 0x100002F34, symSize: 0x18 }
+  - { offset: 0x826, size: 0x8, addend: 0x0, symName: _RR_finish, symObjAddr: 0x40, symBinAddr: 0x100002F4C, symSize: 0x4 }
+  - { offset: 0x8BF, size: 0x8, addend: 0x0, symName: _SRTN_tick, symObjAddr: 0x0, symBinAddr: 0x100002F50, symSize: 0x14 }
+  - { offset: 0x8CC, size: 0x8, addend: 0x0, symName: _SRTN_tick, symObjAddr: 0x0, symBinAddr: 0x100002F50, symSize: 0x14 }
+  - { offset: 0x8F4, size: 0x8, addend: 0x0, symName: _SRTN_startup, symObjAddr: 0x14, symBinAddr: 0x100002F64, symSize: 0x8 }
+  - { offset: 0x90D, size: 0x8, addend: 0x0, symName: _SRTN_new_arrival, symObjAddr: 0x1C, symBinAddr: 0x100002F6C, symSize: 0x18 }
+  - { offset: 0x943, size: 0x8, addend: 0x0, symName: _SRTN_finish, symObjAddr: 0x34, symBinAddr: 0x100002F84, symSize: 0x4 }
+  - { offset: 0x9DC, size: 0x8, addend: 0x0, symName: _overlapping_time, symObjAddr: 0x0, symBinAddr: 0x100002F88, symSize: 0x70 }
+  - { offset: 0xA03, size: 0x8, addend: 0x0, symName: _arriving_processes, symObjAddr: 0x2278, symBinAddr: 0x100008010, symSize: 0x0 }
+  - { offset: 0xA6D, size: 0x8, addend: 0x0, symName: _idle_count, symObjAddr: 0x2280, symBinAddr: 0x100008018, symSize: 0x0 }
+  - { offset: 0xA82, size: 0x8, addend: 0x0, symName: _resulting_schedule, symObjAddr: 0x2288, symBinAddr: 0x100008020, symSize: 0x0 }
+  - { offset: 0xA9C, size: 0x8, addend: 0x0, symName: _toggle_color, symObjAddr: 0xCB0, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0xADD, size: 0x8, addend: 0x0, symName: _overlapping_time, symObjAddr: 0x0, symBinAddr: 0x100002F88, symSize: 0x70 }
+  - { offset: 0xB13, size: 0x8, addend: 0x0, symName: _end_time, symObjAddr: 0x70, symBinAddr: 0x100002FF8, symSize: 0x8C }
+  - { offset: 0xB49, size: 0x8, addend: 0x0, symName: _scheduler, symObjAddr: 0xFC, symBinAddr: 0x100003084, symSize: 0x4FC }
+  - { offset: 0xD09, size: 0x8, addend: 0x0, symName: _initialize_processes, symObjAddr: 0x610, symBinAddr: 0x100003598, symSize: 0x110 }
+  - { offset: 0xD57, size: 0x8, addend: 0x0, symName: _calc_max_time, symObjAddr: 0x720, symBinAddr: 0x1000036A8, symSize: 0x50 }
+  - { offset: 0xD8D, size: 0x8, addend: 0x0, symName: _check_new_arrival, symObjAddr: 0x770, symBinAddr: 0x1000036F8, symSize: 0x90 }
+  - { offset: 0xDED, size: 0x8, addend: 0x0, symName: _print_and_save_process, symObjAddr: 0x800, symBinAddr: 0x100003788, symSize: 0x140 }
+  - { offset: 0xE3B, size: 0x8, addend: 0x0, symName: _free_processes, symObjAddr: 0x940, symBinAddr: 0x1000038C8, symSize: 0x70 }
+  - { offset: 0xE7B, size: 0x8, addend: 0x0, symName: _sort_processes_by_start_time, symObjAddr: 0x9B0, symBinAddr: 0x100003938, symSize: 0x160 }
+...
