@@ -101,7 +101,7 @@ process *MLF_new_arrival(process *arriving_process, process *running_process)
     if(running_process == NULL) return arriving_process;
     if(arriving_process == NULL) return running_process;
 
-	queue_add(arriving_process, MLF_queues);
+	queue_add(arriving_process, MLF_queues[0]);
     return running_process;
 }
 
