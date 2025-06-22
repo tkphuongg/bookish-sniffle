@@ -22,9 +22,9 @@ void* poll_HRR(queue_object* queue)
 	double RR = calc_return_rate(HRR->object);
 	while (compare_object->next != NULL)
 	{
-		if(RR < calc_return_rate(compare_object->next))
+		if(RR < calc_return_rate(compare_object))
 		{
-			RR = calc_return_rate(compare_object->next);
+			RR = calc_return_rate(compare_object);
 			HRR = compare_object->next;
 			HRR_prev = compare_object;
 		}
