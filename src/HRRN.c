@@ -1,5 +1,4 @@
 #include "../lib/HRRN.h"
-#include <stdio.h>
 
 static queue_object *HRRN_queue;
 static uint32_t global_time = 0;
