@@ -3,22 +3,35 @@
 static queue_object *SRTN_queue;
 //You can add more global variables here
 
+int add_SRTN(process* process_to_add, queue_object* queue){
+	queue_object* waiting_process = SRTN_queue;
+	while(waiting_process->next != NULL && 
+		((process*) waiting_process->next)->time_left > process_to_add->time_left)
+	{
+		waiting_process = waiting_process->next;
+	}
+	return queue_add(process_to_add, waiting_process);
+}
+
 process *SRTN_tick(process *running_process)
 {
 	// TODO
-	if (running_process == NULL || running_process->time_left == 0) 
-	{
-		running_process = queue_poll(SRTN_queue);
+	// If no process running or waiting
+	if(running_process == NULL && queue_peek(SRTN_queue) == NULL){
+		return NULL;
 	}
-	if (running_process->time_left < ((process*) queue_peek(SRTN_queue))->time_left)
-	{
-		return queue_peek(SRTN_queue);
+
+	if(running_process == NULL || running_process->time_left == 0){
+		running_process =  queue_poll(SRTN_queue);
 	}
-	else
-	{
-		running_process->time_left--;
-		return running_process;
-	}
+	else if(queue_peek(SRTN_queue) != NULL && 
+		running_process->time_left > ((process*) queue_peek(SRTN_queue))->time_left)
+		{
+			add_SRTN(running_process, SRTN_queue);
+			running_process =  queue_poll(SRTN_queue);
+		}
+	running_process->time_left--;
+	return running_process;
 }
 
 int SRTN_startup()
@@ -38,34 +51,16 @@ process *SRTN_new_arrival(process *arriving_process, process *running_process)
     if(running_process == NULL) return arriving_process;
     if(arriving_process == NULL) return running_process;
 
-	queue_object* waiting_process = SRTN_queue;
-	if(arriving_process->time_left < running_process->time_left)
+	if(arriving_process->time_left >= running_process->time_left)
 	{
-		if(SRTN_queue->next == NULL)
-		{
-        queue_add(running_process, SRTN_queue);
-        return arriving_process;
-    	}
-
-		while(running_process->time_left < ((process*) waiting_process->next->object)->time_left)
-		{
-			waiting_process = waiting_process->next;
-		}
-		queue_add(running_process, waiting_process);
+		add_SRTN(arriving_process, SRTN_queue);
+		return running_process;
+	}
+	else
+	{
+		add_SRTN(running_process, SRTN_queue);
 		return arriving_process;
 	}
-
-	if(SRTN_queue->next == NULL)
-	{
-        queue_add(arriving_process, SRTN_queue);
-        return running_process;
-    }
-    while(arriving_process->time_left < ((process*) waiting_process->next->object)->time_left)
-	{
-        waiting_process = waiting_process->next;
-	}
-	queue_add(arriving_process, waiting_process);
-	return running_process;
 }
 
 void SRTN_finish()
