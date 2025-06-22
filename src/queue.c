@@ -63,18 +63,9 @@ void free_queue(queue_object *queue)
 	while (item_to_free->next != NULL)
 	{
 		queue = queue->next;
-		if(item_to_free->object != NULL)
-		{
-			free(item_to_free->object);
-			item_to_free->object = NULL;
-		}
 		free(item_to_free);
 		item_to_free = queue;
 	}
-	if(item_to_free->object != NULL)
-	{
-		free(item_to_free->object);
-	}	
 	free(item_to_free);
 }
 
