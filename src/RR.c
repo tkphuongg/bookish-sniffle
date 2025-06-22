@@ -17,20 +17,16 @@ process *RR_tick(process *running_process)
 	if(running_process == NULL || running_process->time_left == 0){
 		running_process =  queue_poll(RR_queue);
 		used_quantum = 1;
-		printf("No running process, polled %c from queue.\n", running_process->id);
 	}
 	// Check if running process has used up quantum
 	else if(used_quantum == quant){
 		queue_add(running_process, RR_queue);
 		running_process = queue_poll(RR_queue);
 		used_quantum = 1;
-		printf("Previous finished quantum, polled %c from queue.\n", running_process->id);
 	}
 	else{
 		used_quantum++;
 	}
-	printf("Quantum: %i\n", quant);
-	printf("Used quantum of %c: %i\n", running_process->id, used_quantum);
 	running_process->time_left--;
     return running_process;
 }
@@ -53,9 +49,6 @@ process *RR_new_arrival(process *arriving_process, process *running_process)
 	if(arriving_process == NULL && running_process == NULL) return NULL;
     if(running_process == NULL) return arriving_process;
     if(arriving_process == NULL) return running_process;
-
-	printf("Process %c arrived, process %c running. %c added to queue.", 
-		arriving_process->id, running_process->id, arriving_process->id);
 
     queue_add(arriving_process, RR_queue);
     return running_process;
