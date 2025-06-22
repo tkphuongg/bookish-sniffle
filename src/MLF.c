@@ -64,7 +64,7 @@ process *MLF_tick(process *running_process)
 	
 	if(quantum_used == quantum){
 		move_next_level(running_process);
-		running_process = poll_next_process;
+		running_process = poll_next_process();
 	}
 
 	running_process->time_left--;
