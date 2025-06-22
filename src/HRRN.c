@@ -1,7 +1,7 @@
 #include "../lib/HRRN.h"
 
 static queue_object *HRRN_queue;
-static uint32_t global_time = 0;
+static int global_time = 0;
 //You can add more global variables and structs here
 
 double calc_return_rate(process* p)
