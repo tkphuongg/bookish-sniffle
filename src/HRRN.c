@@ -6,7 +6,11 @@ static int global_time = 0;
 
 double calc_return_rate(process* p)
 {
-	return (double) 1 + (global_time - p->start_time)/p->time_left;
+	if (p == NULL) return 0;
+
+	double rr = 1.0 + ((double)(global_time - p->start_time) / p->time_left);
+
+	return rr;
 }
 
 void* poll_HRR(queue_object* queue)
@@ -22,9 +26,9 @@ void* poll_HRR(queue_object* queue)
 	double RR = calc_return_rate(HRR->object);
 	while (compare_object->next != NULL)
 	{
-		if(RR < calc_return_rate(compare_object))
+		if(RR < calc_return_rate(compare_object->next->object))
 		{
-			RR = calc_return_rate(compare_object);
+			RR = calc_return_rate(compare_object->next->object);
 			HRR = compare_object->next;
 			HRR_prev = compare_object;
 		}
