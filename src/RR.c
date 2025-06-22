@@ -16,18 +16,19 @@ process *RR_tick(process *running_process)
 	// If no running process or running process is done
 	if(running_process == NULL || running_process->time_left == 0){
 		running_process =  queue_poll(RR_queue);
-		used_quantum = 1;
+		used_quantum = 0;
 	}
 	// Check if running process has used up quantum
 	else if(used_quantum == quant){
 		queue_add(running_process, RR_queue);
 		running_process = queue_poll(RR_queue);
-		used_quantum = 1;
+		used_quantum = 0;
 	}
-	else{
+	if(running_process != NULL)
+	{
 		used_quantum++;
+		running_process->time_left--;
 	}
-	running_process->time_left--;
     return running_process;
 }
 
